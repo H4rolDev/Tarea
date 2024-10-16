@@ -1601,6 +1601,20 @@
             "rid": "win"
           }
         }
+      },
+      "DataBase/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "8.0.10",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.10"
+        },
+        "compile": {
+          "bin/placeholder/DataBase.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DataBase.dll": {}
+        }
       }
     }
   },
@@ -4474,10 +4488,16 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "DataBase/1.0.0": {
+      "type": "project",
+      "path": "../DataBase/DataBase.csproj",
+      "msbuildProject": "../DataBase/DataBase.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "DataBase >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 8.0.6",
       "Microsoft.EntityFrameworkCore >= 8.0.10",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.10",
@@ -4486,27 +4506,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\labf\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Harol\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\labf\\Desktop\\Tarea\\TareaBack\\Main\\Main.csproj",
+      "projectUniqueName": "C:\\Users\\Harol\\Desktop\\Tarea\\Tarea\\Main\\Main.csproj",
       "projectName": "Main",
-      "projectPath": "C:\\Users\\labf\\Desktop\\Tarea\\TareaBack\\Main\\Main.csproj",
-      "packagesPath": "C:\\Users\\labf\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\labf\\Desktop\\Tarea\\TareaBack\\Main\\obj\\",
+      "projectPath": "C:\\Users\\Harol\\Desktop\\Tarea\\Tarea\\Main\\Main.csproj",
+      "packagesPath": "C:\\Users\\Harol\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Harol\\Desktop\\Tarea\\Tarea\\Main\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\labf\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Harol\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -4518,7 +4531,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Harol\\Desktop\\Tarea\\Tarea\\DataBase\\DataBase.csproj": {
+              "projectPath": "C:\\Users\\Harol\\Desktop\\Tarea\\Tarea\\DataBase\\DataBase.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -4578,7 +4595,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.301/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

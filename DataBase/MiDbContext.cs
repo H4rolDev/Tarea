@@ -1,25 +1,20 @@
-﻿using DataBase;
-using DataBase.Table;
+﻿using DataBase.Table;
+using DataBase.Seeds;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataBase
 {
-    public class MiDbContext: DbContext
+    public class MiDbContext : DbContext
     {
-        public MiDbContext(DbContextOptions<MiDbContext> options)
-            : base(options)
+        public MiDbContext(
+            DbContextOptions<MiDbContext> opts
+        ) : base(opts)
         {
-
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // ModelBuilder.Seed();
+            modelBuilder.SeedPersonas();
         }
-        public DbSet<Persona> personas {get;set;}
+        public DbSet<PersonaTable> Personas { get; set; }
     }
 }

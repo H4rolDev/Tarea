@@ -1,6 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using DataBase;
+using Main.services;
+using Main.Store.services;
+using Main.repositories;
+using Main.Store.repositories;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,28 +15,50 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-string connStr = builder.Configuration
-    .GetValue<string>("ConnectionStrings:Db");
+var connStr = builder.Configuration
+    .GetValue<string>("ConnectionStrings:DBLocal"); 
 
 // string connStr = builder.Configuration
 //     .GetValue<string>("ConnectionStrings:IcTiendaDb");
+// string linkDataBase = "workstation id=Creation-CRUD.mssql.somee.com;packet size=4096;user id=h4ndx_SQLLogin_1;pwd=vv2skmgumo;data source=Creation-CRUD.mssql.somee.com;persist security info=False;initial catalog=Creation-CRUD;TrustServerCertificate=True";
 
-builder.Services.AddDbContext<DataBase.MiDbContext>(
+builder.Services.AddDbContext<MiDbContext>(
     // Connect to SqlServer
-    (config) => config.UseSqlServer(connStr, b => b.MigrationsAssembly("Main"))
+    (config) => config.UseSqlServer(
+        connStr, b => b.MigrationsAssembly("Main"))
 );
- 
+
+string webFront = builder.Configuration.GetValue<string>("CORS:web");
+string webFront2 = builder.Configuration.GetValue<string>("CORS:web2");
+
+builder.Services.AddCors(
+    (conf) => conf.AddDefaultPolicy( policy => 
+        policy.AllowAnyHeader()
+            .AllowAnyMethod()
+            //.AllowAnyOrigin()
+            //.WithMethods("GET,PUT")
+            .WithOrigins(webFront, webFront2)
+    )
+);
+
+builder.Services.AddScoped<IPersonService, PersonServiceDbImpl>();
+// repositories
+builder.Services.AddScoped<IPersonRepository, PersonRepositoryImpl>();
+
 var app = builder.Build();
 
 app.UseSwagger();
+
 app.UseSwaggerUI();
 
 app.UseHttpsRedirection();  
+
+app.UseRouting();
 
 app.UseAuthorization();
         
 app.MapControllers();
 
-app.UseCors();
+app.UseCors("AllowSpecificOrigin");
 
 app.Run();

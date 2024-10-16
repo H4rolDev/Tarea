@@ -7,7 +7,7 @@
 namespace Main.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class NombreDeLaMigracion : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

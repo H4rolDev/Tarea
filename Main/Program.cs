@@ -31,15 +31,29 @@ builder.Services.AddDbContext<MiDbContext>(
 string webFront = builder.Configuration.GetValue<string>("CORS:web");
 string webFront2 = builder.Configuration.GetValue<string>("CORS:web2");
 
+/* 
 builder.Services.AddCors(
     (conf) => conf.AddDefaultPolicy( policy => 
         policy.AllowAnyHeader()
             .AllowAnyMethod()
             //.AllowAnyOrigin()
-            //.WithMethods("GET,PUT")
-            .WithOrigins(webFront, webFront2)
+            .WithMethods()
+            .WithOrigins("http://localhost:4200")
     )
 );
+ */
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigin",
+        builder =>
+        {
+            builder.WithOrigins("http://localhost:4200")
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+        });
+});
+
 
 builder.Services.AddScoped<IPersonService, PersonServiceDbImpl>();
 // repositories

@@ -1,32 +1,29 @@
-# Usa una imagen base de ASP.NET Core 6.0
+# Usar una imagen base de ASP.NET Core 6.0 para el entorno de ejecución
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 WORKDIR /app
 EXPOSE 80
+EXPOSE 443
 
-# Usa una imagen para el SDK de .NET 6.0 para compilar el proyecto
+# Imagen del SDK de .NET 6.0 para compilar y restaurar dependencias
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 
-# Copia los archivos de proyecto
+# Copiar los archivos de proyecto y restaurar dependencias de NuGet
 COPY ["Main/Main.csproj", "Main/"]
-COPY ["DataBase/DataBase.csproj", "DataBase/"]
-
-# Restaurar dependencias de NuGet
 RUN dotnet restore "Main/Main.csproj"
-RUN dotnet publish --no-restore -c Release -o out
-RUN dotnet restore "DataBase/DataBase.csproj"
-RUN dotnet publish --no-restore -c Release -o out
 
-# Copiar todo el código fuente al contenedor
+# Copiar el resto del código fuente y compilar
 COPY . .
+WORKDIR "/src/Main"
+RUN dotnet build "Main.csproj" -c Release -o /app/build
 
-# Compilar y publicar el proyecto
-RUN dotnet publish "Main/Main.csproj" -c Release -o /app
+# Publicar el proyecto
+RUN dotnet publish "Main.csproj" -c Release -o /app/publish
 
-# Crear la imagen final desde la imagen base
+# Configurar el contenedor final para ejecutar la aplicación
 FROM base AS final
 WORKDIR /app
-COPY --from=build /app .
+COPY --from=build /app/publish .
 
 # Especificar el archivo DLL de entrada
 ENTRYPOINT ["dotnet", "Main.dll"]

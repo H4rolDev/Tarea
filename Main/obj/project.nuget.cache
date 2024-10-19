@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "BxBoxF0PFiA=",
+  "dgSpecHash": "yvydbzomRgQ=",
   "success": false,
   "projectFilePath": "C:\\Users\\Harol\\Desktop\\Tarea\\Tarea\\Main\\Main.csproj",
   "expectedPackageFiles": [
@@ -64,7 +64,7 @@
       "code": "NU1603",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Main depends on Microsoft.AspNetCore.OpenApi (>= 6.0.11) but Microsoft.AspNetCore.OpenApi 6.0.11 was not found. An approximate best match of Microsoft.AspNetCore.OpenApi 7.0.0 was resolved.",
+      "message": "Main depends on Microsoft.AspNetCore.OpenApi (>= 6.0.9) but Microsoft.AspNetCore.OpenApi 6.0.9 was not found. An approximate best match of Microsoft.AspNetCore.OpenApi 7.0.0 was resolved.",
       "libraryId": "Microsoft.AspNetCore.OpenApi",
       "targetGraphs": [
         "net6.0"

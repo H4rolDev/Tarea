@@ -2461,7 +2461,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "DataBase >= 1.0.0",
-      "Microsoft.AspNetCore.OpenApi >= 6.0.11",
+      "Microsoft.AspNetCore.OpenApi >= 6.0.9",
       "Microsoft.EntityFrameworkCore >= 6.0.16",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.16",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.16",
@@ -2518,7 +2518,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
-            "version": "[6.0.11, )"
+            "version": "[6.0.9, )"
           },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
@@ -2585,7 +2585,7 @@
       "code": "NU1603",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Main depends on Microsoft.AspNetCore.OpenApi (>= 6.0.11) but Microsoft.AspNetCore.OpenApi 6.0.11 was not found. An approximate best match of Microsoft.AspNetCore.OpenApi 7.0.0 was resolved.",
+      "message": "Main depends on Microsoft.AspNetCore.OpenApi (>= 6.0.9) but Microsoft.AspNetCore.OpenApi 6.0.9 was not found. An approximate best match of Microsoft.AspNetCore.OpenApi 7.0.0 was resolved.",
       "libraryId": "Microsoft.AspNetCore.OpenApi",
       "targetGraphs": [
         "net6.0"

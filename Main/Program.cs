@@ -6,7 +6,6 @@ using Main.Store.services;
 using Main.repositories;
 using Main.Store.repositories;
 
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -16,7 +15,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var connStr = builder.Configuration
-    .GetValue<string>("ConnectionStrings:DBLocal"); 
+    .GetValue<string>("ConnectionStrings:Db"); 
 
 // string connStr = builder.Configuration
 //     .GetValue<string>("ConnectionStrings:IcTiendaDb");

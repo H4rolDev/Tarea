@@ -4038,27 +4038,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\labh\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Harol\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\labh\\Desktop\\Tarea\\Tarea\\DataBase\\DataBase.csproj",
+      "projectUniqueName": "C:\\Users\\Harol\\Desktop\\Tarea\\Tarea\\DataBase\\DataBase.csproj",
       "projectName": "DataBase",
-      "projectPath": "C:\\Users\\labh\\Desktop\\Tarea\\Tarea\\DataBase\\DataBase.csproj",
-      "packagesPath": "C:\\Users\\labh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\labh\\Desktop\\Tarea\\Tarea\\DataBase\\obj\\",
+      "projectPath": "C:\\Users\\Harol\\Desktop\\Tarea\\Tarea\\DataBase\\DataBase.csproj",
+      "packagesPath": "C:\\Users\\Harol\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Harol\\Desktop\\Tarea\\Tarea\\DataBase\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\labh\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Harol\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -4125,7 +4118,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.301/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

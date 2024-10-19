@@ -1,10 +1,10 @@
 # Usa una imagen base de ASP.NET Core 8.0
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 WORKDIR /app
 EXPOSE 80
 
 # Usa una imagen para el SDK de .NET 8.0 para compilar el proyecto
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 
 # Copia el archivo .csproj de la carpeta Main

@@ -10,6 +10,7 @@ WORKDIR /src
 
 # Copiar los archivos de proyecto y restaurar dependencias de NuGet
 COPY ["Main/Main.csproj", "Main/"]
+COPY ["DataBase/DataBase.csproj", "DataBase/"]
 RUN dotnet restore "Main/Main.csproj"
 
 # Copiar el resto del código fuente y compilar

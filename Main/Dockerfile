@@ -13,7 +13,9 @@ COPY ["DataBase/DataBase.csproj", "DataBase/"]
 
 # Restaurar dependencias de NuGet
 RUN dotnet restore "Main/Main.csproj"
+RUN dotnet publish --no-restore -c Release -o out
 RUN dotnet restore "DataBase/DataBase.csproj"
+RUN dotnet publish --no-restore -c Release -o out
 
 # Copiar todo el código fuente al contenedor
 COPY . .

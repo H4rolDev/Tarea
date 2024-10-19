@@ -1,21 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Harol\\Desktop\\Tarea\\Tarea\\DataBase\\DataBase.csproj": {}
+    "C:\\Users\\labf\\Desktop\\Tarea\\Tarea\\DataBase\\DataBase.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Harol\\Desktop\\Tarea\\Tarea\\DataBase\\DataBase.csproj": {
+    "C:\\Users\\labf\\Desktop\\Tarea\\Tarea\\DataBase\\DataBase.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Harol\\Desktop\\Tarea\\Tarea\\DataBase\\DataBase.csproj",
+        "projectUniqueName": "C:\\Users\\labf\\Desktop\\Tarea\\Tarea\\DataBase\\DataBase.csproj",
         "projectName": "DataBase",
-        "projectPath": "C:\\Users\\Harol\\Desktop\\Tarea\\Tarea\\DataBase\\DataBase.csproj",
-        "packagesPath": "C:\\Users\\Harol\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Harol\\Desktop\\Tarea\\Tarea\\DataBase\\obj\\",
+        "projectPath": "C:\\Users\\labf\\Desktop\\Tarea\\Tarea\\DataBase\\DataBase.csproj",
+        "packagesPath": "C:\\Users\\labf\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\labf\\Desktop\\Tarea\\Tarea\\DataBase\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Harol\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\labf\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -81,12 +86,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.31, 6.0.31]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.31, 6.0.31]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.31, 6.0.31]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -13,6 +13,9 @@ COPY ["Main/Main.csproj", "Main/"]
 COPY ["DataBase/DataBase.csproj", "DataBase/"]
 RUN dotnet restore "Main/Main.csproj"
 
+# Limpiar el caché de NuGet para evitar problemas de corrupción
+RUN dotnet nuget locals all --clear
+
 # Copiar el resto del código fuente y compilar
 COPY . .
 WORKDIR "/src/Main"

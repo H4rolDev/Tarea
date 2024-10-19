@@ -12,6 +12,8 @@ WORKDIR /src
 COPY ["Main/Main.csproj", "Main/"]
 COPY ["DataBase/DataBase.csproj", "DataBase/"]
 RUN dotnet restore "Main/Main.csproj"
+
+# Limpiar el caché de NuGet para evitar problemas de corrupción
 RUN dotnet nuget locals all --clear
 
 # Copiar el resto del código fuente
@@ -21,7 +23,7 @@ COPY . .
 WORKDIR "/src/Main"
 RUN dotnet build "Main.csproj" -c Release -o /app/build
 
-# Publicar el proyecto (sin --no-restore)
+# Publicar el proyecto
 RUN dotnet publish "Main.csproj" -c Release -o /app/publish
 
 # Configurar el contenedor final para ejecutar la aplicación

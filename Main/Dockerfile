@@ -7,25 +7,24 @@ EXPOSE 80
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 
-# Copia el archivo .csproj de la carpeta Main
-COPY ["Main/Main.csproj", "./"]
+# Copia los archivos de proyecto
+COPY ["Main/Main.csproj", "Main/"]
+COPY ["DataBase/DataBase.csproj", "DataBase/"]
 
-# Agrega el archivo NuGet.config (si usas fuentes personalizadas)
-COPY NuGet.config ./
+# Restaurar dependencias de NuGet
+RUN dotnet restore "Main/Main.csproj"
+RUN dotnet restore "DataBase/DataBase.csproj"
 
-# Restaura los paquetes con dotnet restore, asegurando versiones correctas
-RUN dotnet restore --no-cache
+# Copiar todo el código fuente al contenedor
+COPY . .
 
-# Copia todos los archivos de Main al contenedor
-COPY Main/. .
+# Compilar y publicar el proyecto
+RUN dotnet publish "Main/Main.csproj" -c Release -o /app
 
-# Compila el proyecto y genera la publicación
-RUN dotnet publish -c Release -o /app
-
-# Crea la imagen final desde la imagen base
+# Crear la imagen final desde la imagen base
 FROM base AS final
 WORKDIR /app
 COPY --from=build /app .
 
-# Especifica el archivo DLL de tu aplicación
+# Especificar el archivo DLL de entrada
 ENTRYPOINT ["dotnet", "Main.dll"]

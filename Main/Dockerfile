@@ -16,12 +16,14 @@ RUN dotnet restore "Main/Main.csproj"
 # Limpiar el caché de NuGet para evitar problemas de corrupción
 RUN dotnet nuget locals all --clear
 
-# Copiar el resto del código fuente y compilar
+# Copiar el resto del código fuente
 COPY . .
+
+# Compilar el proyecto
 WORKDIR "/src/Main"
 RUN dotnet build "Main.csproj" -c Release -o /app/build
 
-# Publicar el proyecto
+# Publicar el proyecto (sin --no-restore)
 RUN dotnet publish "Main.csproj" -c Release -o /app/publish
 
 # Configurar el contenedor final para ejecutar la aplicación

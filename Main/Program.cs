@@ -12,7 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-
+builder.Services.AddSwaggerGen();
 
 var connStr = builder.Configuration
     .GetValue<string>("ConnectionStrings:Db"); 
@@ -59,6 +59,10 @@ builder.Services.AddScoped<IPersonService, PersonServiceDbImpl>();
 builder.Services.AddScoped<IPersonRepository, PersonRepositoryImpl>();
 
 var app = builder.Build();
+
+app.UseSwagger();
+
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();  
 
